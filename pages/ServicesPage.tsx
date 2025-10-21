@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { SERVICE_DATA } from '../constants';
@@ -23,7 +24,7 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="bg-brand-beige">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h1>
+        <h1 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h1>
         <p className="text-center text-gray-600 mb-10">{t('services_subtitle')}</p>
 
         <nav className="sticky top-20 bg-brand-beige/80 backdrop-blur-sm z-30 py-4 mb-8 overflow-x-auto whitespace-nowrap">
@@ -53,7 +54,7 @@ const ServicesPage: React.FC = () => {
               ref={(el) => { sectionRefs.current[category.key] = el; }}
               className="scroll-mt-24"
             >
-              <h2 className="text-3xl font-serif font-semibold mb-6 text-brand-pink border-b-2 border-pink-200 pb-2">
+              <h2 className="text-2xl sm:text-3xl font-serif font-semibold mb-6 text-brand-pink border-b-2 border-pink-200 pb-2">
                 {t(category.key as TranslationKeys)}
               </h2>
               
@@ -85,7 +86,7 @@ const ServicesPage: React.FC = () => {
                                 href={whatsappUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 transition-colors"
+                                className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 transition-colors"
                                 aria-label={`${t('book_now')} ${serviceName}`}
                               >
                                 <WhatsAppIcon className="w-4 h-4 mr-2" />

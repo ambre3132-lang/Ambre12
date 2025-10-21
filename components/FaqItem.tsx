@@ -13,7 +13,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, onClick }) 
     <div className="border-b border-pink-200 py-4">
       <button
         onClick={onClick}
-        className="w-full flex justify-between items-center text-left text-lg font-semibold text-brand-gray focus:outline-none"
+        className="w-full flex justify-between items-center text-left text-base sm:text-lg font-semibold text-brand-gray focus:outline-none"
         aria-expanded={isOpen}
       >
         <span>{question}</span>

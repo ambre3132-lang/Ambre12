@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Service } from '../types';
 import { useLanguage } from '../context/LanguageContext';
@@ -24,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
       <div>
-        <h3 className="text-xl font-semibold text-brand-gray mb-2">
+        <h3 className="text-lg sm:text-xl font-semibold text-brand-gray mb-2">
           {serviceName}
         </h3>
         {service.noteKey && (
@@ -36,7 +37,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center gap-4">
         <div className="text-left">
           {service.price && (
-            <p className="text-lg font-bold text-brand-pink">{service.price}</p>
+            <p className="text-base sm:text-lg font-bold text-brand-pink">{service.price}</p>
           )}
           {service.duration && (
             <p className="text-sm text-gray-600 mt-1">
@@ -49,7 +50,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 transition-colors"
+            className="flex-shrink-0 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 transition-colors"
             aria-label={`${t('book_now')} ${serviceName}`}
           >
             <WhatsAppIcon className="w-4 h-4 mr-2" />

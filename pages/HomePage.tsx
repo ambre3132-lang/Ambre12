@@ -74,9 +74,9 @@ const ReviewsSection: React.FC = () => {
     return (
         <section className="py-16 bg-brand-beige">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl font-serif font-bold text-center mb-10 text-brand-gray">{t('reviews_title')}</h2>
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-10 text-brand-gray">{t('reviews_title')}</h2>
                 
-                <div className="max-w-2xl mx-auto mb-12 bg-rose-50 p-8 rounded-lg shadow-lg">
+                <div className="max-w-2xl mx-auto mb-12 bg-rose-50 p-6 sm:p-8 rounded-lg shadow-lg">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="relative">
                             <UserIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -153,9 +153,9 @@ const HomePage: React.FC = () => {
             <section className="relative h-[calc(100vh-80px)] flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('https://i.postimg.cc/bvMP48pK/d.png')" }}>
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="relative z-10 text-white px-4">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-4">{t('hero_title')}</h1>
-                    <p className="text-xl md:text-2xl mb-8">{t('hero_subtitle')}</p>
-                    <Link to="/booking" className="bg-brand-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4">{t('hero_title')}</h1>
+                    <p className="text-lg sm:text-xl md:text-2xl mb-8">{t('hero_subtitle')}</p>
+                    <Link to="/booking" className="bg-brand-pink hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300">
                         {t('book_now')}
                     </Link>
                 </div>
@@ -163,7 +163,7 @@ const HomePage: React.FC = () => {
             
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h2>
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">{t('services_subtitle')}</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Service Card 1: Laser */}
@@ -171,7 +171,7 @@ const HomePage: React.FC = () => {
                             <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
                             <SparklesIcon className="w-8 h-8" />
                             </div>
-                            <h3 className="text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_laser')}</h3>
+                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_laser')}</h3>
                             <p className="text-gray-600 mb-4 h-16">{t('home_services_laser_desc')}</p>
                             <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
                             {t('read_more')} &rarr;
@@ -182,7 +182,7 @@ const HomePage: React.FC = () => {
                             <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
                             <FaceSmileIcon className="w-8 h-8" />
                             </div>
-                            <h3 className="text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_visage')}</h3>
+                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_visage')}</h3>
                             <p className="text-gray-600 mb-4 h-16">{t('home_services_facial_desc')}</p>
                             <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
                             {t('read_more')} &rarr;
@@ -193,7 +193,7 @@ const HomePage: React.FC = () => {
                             <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
                             <ScissorsIcon className="w-8 h-8" />
                             </div>
-                            <h3 className="text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_coiffure')}</h3>
+                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_coiffure')}</h3>
                             <p className="text-gray-600 mb-4 h-16">{t('home_services_hair_desc')}</p>
                             <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
                             {t('read_more')} &rarr;
@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
 
             <section className="py-16 bg-brand-beige">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-serif font-bold text-center mb-12 text-brand-gray">{t('special_offers')}</h2>
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-12 text-brand-gray">{t('special_offers')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {topOffers.map((offer, index) => (
                             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
@@ -225,12 +225,12 @@ const HomePage: React.FC = () => {
             
             <section className="py-16 bg-pink-50 text-center">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-4xl font-serif font-bold text-center mb-10 text-brand-gray">{t('map_section_title')}</h2>
-                    <div className="max-w-4xl mx-auto shadow-xl rounded-2xl overflow-hidden">
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-10 text-brand-gray">{t('map_section_title')}</h2>
+                    <div className="max-w-4xl mx-auto shadow-xl rounded-2xl overflow-hidden h-[300px] md:h-[450px]">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.4467227890163!2d-9.5927765!3d30.4234358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7947320326d%3A0x82f4b87d3806c061!2sCentre%20ambre%20pour%20Elle!5e0!3m2!1sen!2sma!4v1761056683289!5m2!1sen!2sma"
                             width="100%"
-                            height="450"
+                            height="100%"
                             style={{ border: 0 }}
                             allowFullScreen={false}
                             loading="lazy"
@@ -242,7 +242,7 @@ const HomePage: React.FC = () => {
                         href="https://maps.app.goo.gl/so69jyMyQQbzMfuo6?g_st=iwb"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block mt-8 bg-brand-pink text-white font-bold px-8 py-3 rounded-full hover:bg-pink-700 transition duration-300 transform hover:scale-105">
+                        className="inline-block mt-8 bg-brand-pink text-white font-bold px-8 py-4 rounded-full hover:bg-pink-700 transition duration-300 transform hover:scale-105">
                         🔗 {t('map_button_text')}
                     </a>
                 </div>
