@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const PhoneIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -73,5 +72,13 @@ export const FaceSmileIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
 export const ScissorsIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M7.848 8.25l1.536.887M7.848 8.25a3 3 0 1 1-5.196-3 3 3 0 0 1 5.196 3Zm1.536.887a2.165 2.165 0 0 1 1.083 1.839V12.75a3 3 0 1 0 6 0V11.02a2.165 2.165 0 0 1 1.083-1.838m-7.083 2.725L15 12.75m-7.083 2.725a3 3 0 1 0-5.196 3 3 3 0 0 0 5.196-3Zm1.536-.887a2.165 2.165 0 0 0 1.083-1.838V9.25a3 3 0 0 1 6 0v1.725c0 .736.374 1.411 1.083 1.838m-7.083-2.725L15 9.25" />
+    </svg>
+);
+
+export const NailPolishIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 7h7v3h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v3" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 13h8v6a2 2 0 01-2 2H10a2 2 0 01-2-2v-6z" />
     </svg>
 );

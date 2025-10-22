@@ -1,3 +1,4 @@
+
 export interface TeamMember {
     name: string;
     image: string;
@@ -9,6 +10,7 @@ export interface Offer {
     title: string;
     description: string;
     price: string;
+    image?: string;
 }
 
 export type ResultCategory = 'onglerie' | 'visage' | 'corps' | 'coiffure';
@@ -17,6 +19,12 @@ export interface ResultImage {
     id: number;
     before: string;
     after: string;
+    category: ResultCategory;
+}
+
+export interface GalleryImage {
+    id: number;
+    src: string;
     category: ResultCategory;
 }
 

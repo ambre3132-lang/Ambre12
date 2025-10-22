@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
     return (
         <div>
             {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2070&auto=format&fit=crop')" }}>
+            <section className="relative h-[50vh] flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('https://i.postimg.cc/Y9DLZ4Y1/2.png')" }}>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative z-10 text-white px-4">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4">{t('about_page_title')}</h1>

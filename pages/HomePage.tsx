@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { db } from '../firebaseConfig';
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from 'firebase/firestore';
 import { Review } from '../types';
-import { UserIcon, ChatBubbleBottomCenterTextIcon, PaperAirplaneIcon, SparklesIcon, FaceSmileIcon, ScissorsIcon } from '../components/icons/Icons';
+import { UserIcon, ChatBubbleBottomCenterTextIcon, PaperAirplaneIcon } from '../components/icons/Icons';
 import { OFFERS } from '../constants';
 import { TranslationKeys } from '../translations';
 
@@ -148,9 +148,36 @@ const HomePage: React.FC = () => {
     const { t } = useLanguage();
     const topOffers = OFFERS.slice(0, 3);
     
+    const backgroundImages = [
+        "https://i.postimg.cc/Y2yQyPx1/1.png",
+        "https://i.postimg.cc/Y9DLZ4Y1/2.png",
+        "https://i.postimg.cc/YCBG5BLr/3.png",
+        "https://i.postimg.cc/SRzRPgyc/4.png"
+    ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearTimeout(timer);
+    }, [currentImageIndex, backgroundImages.length]);
+
     return (
         <div>
-            <section className="relative h-[calc(100vh-80px)] flex items-center justify-center text-center bg-cover bg-center" style={{ backgroundImage: "url('https://i.postimg.cc/bvMP48pK/d.png')" }}>
+            <section className="relative h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden">
+                {backgroundImages.map((src, index) => (
+                    <div
+                        key={index}
+                        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                        style={{ backgroundImage: `url(${src})` }}
+                        aria-hidden={index !== currentImageIndex}
+                        role="img"
+                        aria-label={`Background image ${index + 1}`}
+                    />
+                ))}
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="relative z-10 text-white px-4">
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4">{t('hero_title')}</h1>
@@ -165,39 +192,61 @@ const HomePage: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">{t('services_subtitle')}</p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Service Card 1: Laser */}
-                        <div className="text-center p-8 bg-rose-50 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                            <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
-                            <SparklesIcon className="w-8 h-8" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                        {/* Service Card 1: Facial */}
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://i.postimg.cc/DyQShbPq/jd.png" alt={t('services_category_visage')} className="w-full h-40 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow text-center">
+                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_visage')}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_facial_desc')}</p>
+                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
+                                {t('read_more')} &rarr;
+                                </Link>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_laser')}</h3>
-                            <p className="text-gray-600 mb-4 h-16">{t('home_services_laser_desc')}</p>
-                            <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                            {t('read_more')} &rarr;
-                            </Link>
                         </div>
-                        {/* Service Card 2: Facial */}
-                        <div className="text-center p-8 bg-rose-50 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                            <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
-                            <FaceSmileIcon className="w-8 h-8" />
+                        {/* Service Card 2: Nail Care */}
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://i.postimg.cc/y89vsjrp/sfd.png" alt={t('services_category_onglerie')} className="w-full h-40 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow text-center">
+                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_onglerie')}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_onglerie_desc')}</p>
+                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
+                                {t('read_more')} &rarr;
+                                </Link>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_visage')}</h3>
-                            <p className="text-gray-600 mb-4 h-16">{t('home_services_facial_desc')}</p>
-                            <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                            {t('read_more')} &rarr;
-                            </Link>
                         </div>
-                        {/* Service Card 3: Hair */}
-                        <div className="text-center p-8 bg-rose-50 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                            <div className="inline-block p-4 bg-brand-pink text-white rounded-full mb-4">
-                            <ScissorsIcon className="w-8 h-8" />
+                        {/* Service Card 3: Laser */}
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
+                            <img src="https://i.postimg.cc/D0J15f9N/td.png" alt={t('services_category_laser')} className="w-full h-40 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow text-center">
+                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_laser')}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_laser_desc')}</p>
+                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
+                                {t('read_more')} &rarr;
+                                </Link>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_coiffure')}</h3>
-                            <p className="text-gray-600 mb-4 h-16">{t('home_services_hair_desc')}</p>
-                            <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                            {t('read_more')} &rarr;
-                            </Link>
+                        </div>
+                        {/* Service Card 4: Hair */}
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
+                             <img src="https://i.postimg.cc/x1Y6R7Rp/rs.png" alt={t('services_category_coiffure')} className="w-full h-40 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow text-center">
+                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_coiffure')}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_hair_desc')}</p>
+                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
+                                {t('read_more')} &rarr;
+                                </Link>
+                            </div>
+                        </div>
+                         {/* Service Card 5: Natural Waxing */}
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
+                             <img src="https://i.postimg.cc/rwFSzLjP/hehre.png" alt={t('home_services_epilation_naturel' as TranslationKeys)} className="w-full h-40 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow text-center">
+                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('home_services_epilation_naturel' as TranslationKeys)}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_epilation_naturel_desc' as TranslationKeys)}</p>
+                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
+                                {t('read_more')} &rarr;
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -209,7 +258,7 @@ const HomePage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {topOffers.map((offer, index) => (
                             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                                <img src={`https://placehold.co/400x300/${['fecdd3','fbcfe8','f9a8d4'][index]}/4A4A4A?text=Offre+${index + 1}`} alt={t(offer.title as TranslationKeys)} className="w-full h-48 object-cover"/>
+                                <img src={offer.image || `https://placehold.co/400x300/${['fecdd3','fbcfe8','f9a8d4'][index]}/4A4A4A?text=Offre+${index + 1}`} alt={t(offer.title as TranslationKeys)} className="w-full h-48 object-cover"/>
                                 <div className="p-6 flex flex-col flex-grow">
                                     <h3 className="text-xl font-bold font-serif text-brand-pink mb-2 flex-grow">{t(offer.title as TranslationKeys)}</h3>
                                     <p className="text-3xl font-bold text-yellow-600 mb-4">{offer.price}</p>

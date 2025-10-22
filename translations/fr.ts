@@ -1,3 +1,4 @@
+
 export const fr = {
     // Nav
     nav_home: 'Accueil',
@@ -21,7 +22,10 @@ export const fr = {
     home_services_laser_desc: 'Une technologie de pointe pour des résultats lisses et durables, en toute sécurité.',
     home_services_facial_desc: 'Révélez l\'éclat de votre peau avec nos soins personnalisés et relaxants.',
     home_services_hair_desc: 'Coupes, couleurs et styles pour sublimer votre chevelure par nos experts stylistes.',
-  
+    home_services_onglerie_desc: 'Des mains et des pieds impeccables avec nos manucures, pédicures et nail art créatifs.',
+    home_services_epilation_naturel: 'Épilation Naturelle',
+    home_services_epilation_naturel_desc: 'Des méthodes douces pour une peau lisse, respectueuses de votre peau.',
+
     // Footer & Contact
     footer_description: 'Votre sanctuaire de beauté et de bien-être au cœur de Agadir. Nous offrons une gamme complète de services pour vous faire sentir et paraître à votre meilleur.',
     contact_us: 'Contactez-nous',
@@ -35,6 +39,7 @@ export const fr = {
     // WhatsApp
     whatsapp_default_message: 'Bonjour, je souhaite prendre un rendez-vous.',
     whatsapp_button_contact: 'Contactez-nous sur WhatsApp',
+    instagram_button_label: 'Suivez-nous sur Instagram',
   
     // Services Page
     our_services: 'Nos Services',
@@ -153,6 +158,8 @@ export const fr = {
 
     // Results Page
     our_results: 'Nos Résultats',
+    results_gallery_section_title: 'Galerie d\'Images',
+    results_before_after_section_title: 'Avant & Après',
     onglerie: 'Onglerie',
     visage: 'Visage',
     corps: 'Corps',
@@ -171,8 +178,8 @@ export const fr = {
     about_page_title: 'Notre Histoire, Votre Beauté',
     about_hero_subtitle: 'Découvrez l\'âme d\'Ambre, un lieu où la passion pour la beauté rencontre l\'excellence du service.',
     about_history_title: 'Notre Histoire',
-    about_history_p1: 'Fondé en 2018 par Ambre Dubois, une esthéticienne passionnée, le salon Ambre a débuté comme un rêve modeste : créer un espace accueillant où chaque client se sentirait unique et valorisé. Guidée par sa vision, Ambre a voulu offrir plus que de simples services de beauté, mais une véritable expérience de bien-être.',
-    about_history_p2: 'Au fil des ans, notre petit salon est devenu une référence à Agadir, grâce à notre engagement envers la qualité, l\'innovation et la satisfaction de nos clients. Notre équipe s\'est agrandie, mais notre philosophie reste la même : sublimer votre beauté naturelle avec soin et expertise.',
+    about_history_p1: 'Fondé en 2003 par Fatna El Ouassi, infirmière polyvalente diplômée et ancienne professeure d’esthétique à l’institut Fandi, le Centre Ambre est né d’une passion profonde pour la beauté, la santé et le bien-être.',
+    about_history_p2: 'Forte de son double parcours médical et esthétique, Fatna a voulu créer un espace où la science du soin rencontre l’art de la beauté. Spécialisée dans les soins du visage et l’onglerie, elle a fait du Centre Ambre un lieu d’excellence, alliant technique, détente et raffinement.',
     about_mission_title: 'Notre Mission',
     about_mission_p1: 'Notre mission est d\'offrir une expérience de beauté exceptionnelle qui inspire confiance et bien-être. Nous nous engageons à utiliser des produits de haute qualité et les dernières techniques pour garantir des résultats impeccables, tout en créant un environnement relaxant et chaleureux pour nos clients.',
     about_values_title: 'Nos Valeurs',

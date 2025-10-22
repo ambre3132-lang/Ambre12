@@ -1,3 +1,4 @@
+
 export const en = {
     // Nav
     nav_home: 'Home',
@@ -21,6 +22,9 @@ export const en = {
     home_services_laser_desc: 'Cutting-edge technology for smooth, long-lasting, and safe results.',
     home_services_facial_desc: 'Reveal your skin\'s radiance with our personalized and relaxing treatments.',
     home_services_hair_desc: 'Cuts, colors, and styles to enhance your hair by our expert stylists.',
+    home_services_onglerie_desc: 'Impeccable hands and feet with our manicures, pedicures, and creative nail art.',
+    home_services_epilation_naturel: 'Natural Waxing',
+    home_services_epilation_naturel_desc: 'Gentle methods for smooth skin, respectful of your skin.',
   
     // Footer & Contact
     footer_description: 'Your sanctuary of beauty and well-being in the heart of Agadir. We offer a full range of services to make you look and feel your best.',
@@ -35,6 +39,7 @@ export const en = {
     // WhatsApp
     whatsapp_default_message: 'Hello, I would like to book an appointment.',
     whatsapp_button_contact: 'Contact us on WhatsApp',
+    instagram_button_label: 'Follow us on Instagram',
   
     // Services Page
     our_services: 'Our Services',
@@ -153,6 +158,8 @@ export const en = {
 
     // Results Page
     our_results: 'Our Results',
+    results_gallery_section_title: 'Image Gallery',
+    results_before_after_section_title: 'Before & After',
     onglerie: 'Nail Care',
     visage: 'Face',
     corps: 'Body',

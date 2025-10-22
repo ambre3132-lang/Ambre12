@@ -1,3 +1,4 @@
+
 export const ar = {
     // Nav
     nav_home: 'الرئيسية',
@@ -21,6 +22,9 @@ export const ar = {
     home_services_laser_desc: 'تقنية متطورة لنتائج ناعمة تدوم طويلاً، بكل أمان.',
     home_services_facial_desc: 'اكشفي عن إشراقة بشرتك مع علاجاتنا المخصصة والمريحة.',
     home_services_hair_desc: 'قصات وألوان وتسريحات لإبراز جمال شعرك على أيدي خبرائنا.',
+    home_services_onglerie_desc: 'لأيدي وأقدام لا تشوبها شائبة مع خدمات المانيكير والباديكير وفن الأظافر.',
+    home_services_epilation_naturel: 'إزالة الشعر الطبيعية',
+    home_services_epilation_naturel_desc: 'طرق لطيفة وفعالة لبشرة ناعمة وحريرية تحترم بشرتك.',
   
     // Footer & Contact
     footer_description: 'ملاذك للجمال والرفاهية في قلب أكادير. نقدم مجموعة كاملة من الخدمات لتجعلك تبدين وتشعرين بأفضل حال.',
@@ -35,6 +39,7 @@ export const ar = {
     // WhatsApp
     whatsapp_default_message: 'مرحباً، أود حجز موعد.',
     whatsapp_button_contact: 'تواصل معنا عبر الواتساب',
+    instagram_button_label: 'تابعنا على انستغرام',
   
     // Services Page
     our_services: 'خدماتنا',
@@ -153,6 +158,8 @@ export const ar = {
 
     // Results Page
     our_results: 'نتائجنا',
+    results_gallery_section_title: 'قسم الصور',
+    results_before_after_section_title: 'قسم قبل و بعد',
     onglerie: 'الأظافر',
     visage: 'الوجه',
     corps: 'الجسم',

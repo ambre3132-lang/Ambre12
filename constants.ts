@@ -1,9 +1,10 @@
-import { Offer, ResultImage, ServiceCategory, TeamMember, BeautyTip } from './types';
+
+import { Offer, ResultImage, ServiceCategory, TeamMember, BeautyTip, GalleryImage } from './types';
 
 export const CONTACT_INFO = {
   address: 'Rue Fal Ould Oumair, Agadir 80000',
   phone: '+212 666-678797',
-  email: 'contact@ambre.ma',
+  email: 'ambre3132@gmail.com',
   instagram: 'https://www.instagram.com/centre_ambre/',
   facebook: 'https://www.facebook.com/AmbreAgadir?mibextid=wwXIfr&mibextid=wwXIfr',
   whatsapp: '212666678797', // no + for wa.me link
@@ -164,35 +165,52 @@ export const OFFERS: Offer[] = [
     {
         title: 'offer_biab_manicure_russe_title',
         description: 'offer_biab_manicure_russe_desc',
-        price: '200DH'
+        price: '200DH',
+        image: "https://i.postimg.cc/vBJH5QGQ/fawe.png"
     },
     {
         title: 'offer_mani_pedi_perm_title',
         description: 'offer_mani_pedi_perm_desc',
-        price: '250DH'
+        price: '250DH',
+        image: "https://i.postimg.cc/B6VPk9sB/hf.png"
     },
     {
         title: 'offer_gel_title',
         description: 'offer_gel_desc',
-        price: '250DH'
+        price: '250DH',
+        image: "https://i.postimg.cc/GpNsSnbM/utf.png"
     },
     {
         title: 'offer_faux_ongles_title',
         description: 'offer_faux_ongles_desc',
-        price: '150DH'
+        price: '150DH',
+        image: "https://i.postimg.cc/d0Rz5w2f/gff.png"
     },
     {
         title: 'offer_vernis_perm_title',
         description: 'offer_vernis_perm_desc',
-        price: '100DH'
+        price: '100DH',
+        image: "https://i.postimg.cc/nhrr8SSf/ega.png"
     }
 ];
 
-export const RESULTS: ResultImage[] = [
-    { id: 1, before: 'https://i.postimg.cc/g0HrPCXN/1.png', after: 'https://i.postimg.cc/Bbkngsyh/2.png', category: 'onglerie' },
-    { id: 2, before: 'https://i.postimg.cc/NfdWZpjx/11.png', after: 'https://i.postimg.cc/rm2b5HQP/22.png', category: 'visage' },
-    { id: 3, before: 'https://i.postimg.cc/cJFTX4Md/e.png', after: 'https://i.postimg.cc/kGbcJQ0H/ee.png', category: 'corps' },
-    { id: 4, before: 'https://i.postimg.cc/PfYYq5pP/3.png', after: 'https://i.postimg.cc/T37WsyS9/4.png', category: 'coiffure' },
-    { id: 5, before: 'https://i.postimg.cc/Kzcw8Hfq/jsd.png', after: 'https://i.postimg.cc/HnRh3sgF/3276.png', category: 'onglerie' },
-    { id: 6, before: 'https://i.postimg.cc/qvTTdjft/we.png', after: 'https://i.postimg.cc/tgrQWbsb/fsd.png', category: 'visage' },
+export const RESULTS_GALLERY: GalleryImage[] = [
+    { id: 1, src: 'https://i.postimg.cc/rwM3Zzj8/1.png', category: 'onglerie' },
+    { id: 2, src: 'https://i.postimg.cc/nLL5Z5Nk/2.png', category: 'visage' },
+    { id: 4, src: 'https://i.postimg.cc/rmBY1psQ/3.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/CLVQddWd/4.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/9QL8xbzy/5.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/bvM6PvxR/6.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/MH0t1bhT/7.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/15HJtB0S/8.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/JhyqpWf0/9.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/wMkc1xm2/10.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/DzbrqPXt/11.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/PJd1nGRj/12.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/kXXWjmSF/13.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/FzFknyYd/14.png', category: 'coiffure' },
+];
+
+export const RESULTS_BEFORE_AFTER: ResultImage[] = [
+    { id: 7, before: 'https://i.postimg.cc/tC48D3fc/image.png', after: 'https://i.postimg.cc/RhXy4h3n/image.png', category: 'coiffure' },
 ];
