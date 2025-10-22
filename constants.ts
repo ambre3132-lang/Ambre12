@@ -2,7 +2,7 @@
 import { Offer, ResultImage, ServiceCategory, TeamMember, BeautyTip, GalleryImage } from './types';
 
 export const CONTACT_INFO = {
-  address: 'Rue Fal Ould Oumair, Agadir 80000',
+  address: '27 rue fal ouald oumeir talborjte agadir',
   phone: '+212 666-678797',
   email: 'ambre3132@gmail.com',
   instagram: 'https://www.instagram.com/centre_ambre/',
