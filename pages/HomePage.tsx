@@ -151,8 +151,9 @@ const HomePage: React.FC = () => {
     const backgroundImages = [
         "https://i.postimg.cc/Y2yQyPx1/1.png",
         "https://i.postimg.cc/Y9DLZ4Y1/2.png",
-        "https://i.postimg.cc/YCBG5BLr/3.png",
-        "https://i.postimg.cc/SRzRPgyc/4.png"
+        "https://i.postimg.cc/SRzRPgyc/4.png",
+        "https://i.postimg.cc/Pqh1mNgW/1.png",
+        "https://i.postimg.cc/PfcZS6Gr/sy.png"
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -164,6 +165,14 @@ const HomePage: React.FC = () => {
 
         return () => clearTimeout(timer);
     }, [currentImageIndex, backgroundImages.length]);
+
+    const homeServices = [
+        { titleKey: 'services_category_visage' as TranslationKeys, descKey: 'home_services_facial_desc' as TranslationKeys, image: 'https://i.postimg.cc/ZYsNnJJ4/a.png' },
+        { titleKey: 'services_category_onglerie' as TranslationKeys, descKey: 'home_services_onglerie_desc' as TranslationKeys, image: 'https://i.postimg.cc/hvNhrPGr/aa.png' },
+        { titleKey: 'services_category_laser' as TranslationKeys, descKey: 'home_services_laser_desc' as TranslationKeys, image: 'https://i.postimg.cc/wjX3XzYM/aaa.png' },
+        { titleKey: 'services_category_coiffure' as TranslationKeys, descKey: 'home_services_hair_desc' as TranslationKeys, image: 'https://i.postimg.cc/1XV3fhKq/aaaa.png' },
+        { titleKey: 'home_services_epilation_naturel' as TranslationKeys, descKey: 'home_services_epilation_naturel_desc' as TranslationKeys, image: 'https://i.postimg.cc/W4prtzFK/aaaaa.png' },
+    ];
 
     return (
         <div>
@@ -178,10 +187,9 @@ const HomePage: React.FC = () => {
                         aria-label={`Background image ${index + 1}`}
                     />
                 ))}
-                <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="relative z-10 text-white px-4">
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4">{t('hero_title')}</h1>
-                    <p className="text-lg sm:text-xl md:text-2xl mb-8">{t('hero_subtitle')}</p>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>{t('hero_title')}</h1>
+                    <p className="text-lg sm:text-xl md:text-2xl mb-8" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>{t('hero_subtitle')}</p>
                     <Link to="/booking" className="bg-brand-pink hover:bg-pink-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300">
                         {t('book_now')}
                     </Link>
@@ -193,61 +201,33 @@ const HomePage: React.FC = () => {
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-4 text-brand-gray">{t('our_services')}</h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">{t('services_subtitle')}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        {/* Service Card 1: Facial */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                            <img src="https://i.postimg.cc/DyQShbPq/jd.png" alt={t('services_category_visage')} className="w-full h-40 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow text-center">
-                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_visage')}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_facial_desc')}</p>
-                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                {t('read_more')} &rarr;
-                                </Link>
+                        {homeServices.map((service, index) => (
+                            <div key={index} className="relative rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 group aspect-[4/5]">
+                                <img 
+                                    src={service.image} 
+                                    alt={t(service.titleKey)} 
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="relative z-10 h-full flex flex-col justify-center items-center p-4 text-center text-white">
+                                    <h3 
+                                        className="text-lg sm:text-xl font-serif font-bold mb-2"
+                                        style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.7)' }}
+                                    >
+                                        {t(service.titleKey)}
+                                    </h3>
+                                    <p 
+                                        className="text-xs sm:text-sm mb-4 opacity-90"
+                                        style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.7)' }}
+                                    >
+                                        {t(service.descKey)}
+                                    </p>
+                                    <Link to="/services" className="font-semibold text-white border-b-2 border-transparent hover:border-white transition-colors duration-300 text-sm">
+                                        {t('read_more')} &rarr;
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                        {/* Service Card 2: Nail Care */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                            <img src="https://i.postimg.cc/y89vsjrp/sfd.png" alt={t('services_category_onglerie')} className="w-full h-40 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow text-center">
-                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_onglerie')}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_onglerie_desc')}</p>
-                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                {t('read_more')} &rarr;
-                                </Link>
-                            </div>
-                        </div>
-                        {/* Service Card 3: Laser */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                            <img src="https://i.postimg.cc/D0J15f9N/td.png" alt={t('services_category_laser')} className="w-full h-40 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow text-center">
-                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_laser')}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_laser_desc')}</p>
-                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                {t('read_more')} &rarr;
-                                </Link>
-                            </div>
-                        </div>
-                        {/* Service Card 4: Hair */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                             <img src="https://i.postimg.cc/x1Y6R7Rp/rs.png" alt={t('services_category_coiffure')} className="w-full h-40 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow text-center">
-                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('services_category_coiffure')}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_hair_desc')}</p>
-                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                {t('read_more')} &rarr;
-                                </Link>
-                            </div>
-                        </div>
-                         {/* Service Card 5: Natural Waxing */}
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                             <img src="https://i.postimg.cc/rwFSzLjP/hehre.png" alt={t('home_services_epilation_naturel' as TranslationKeys)} className="w-full h-40 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow text-center">
-                                <h3 className="text-lg sm:text-xl font-bold font-serif text-brand-gray mb-2">{t('home_services_epilation_naturel' as TranslationKeys)}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{t('home_services_epilation_naturel_desc' as TranslationKeys)}</p>
-                                <Link to="/services" className="font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                {t('read_more')} &rarr;
-                                </Link>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -257,13 +237,31 @@ const HomePage: React.FC = () => {
                     <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-12 text-brand-gray">{t('special_offers')}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {topOffers.map((offer, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
-                                <img src={offer.image || `https://placehold.co/400x300/${['fecdd3','fbcfe8','f9a8d4'][index]}/4A4A4A?text=Offre+${index + 1}`} alt={t(offer.title as TranslationKeys)} className="w-full h-48 object-cover"/>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <h3 className="text-xl font-bold font-serif text-brand-pink mb-2 flex-grow">{t(offer.title as TranslationKeys)}</h3>
-                                    <p className="text-3xl font-bold text-yellow-600 mb-4">{offer.price}</p>
-                                    <Link to="/offres" className="mt-auto self-start font-semibold text-brand-pink hover:text-pink-700 transition-colors">
-                                    {t('read_more')} &rarr;
+                             <div key={index} className="relative rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 group aspect-[4/5]">
+                                <img 
+                                    src={offer.image || `https://placehold.co/400x500/${['fecdd3','fbcfe8','f9a8d4'][index]}/4A4A4A?text=Offre+${index + 1}`} 
+                                    alt={t(offer.title as TranslationKeys)} 
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="relative z-10 h-full flex flex-col justify-center items-center p-6 text-center text-white">
+                                    <h3 
+                                        className="text-2xl font-serif font-bold mb-4"
+                                        style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)' }}
+                                    >
+                                        {t(offer.title as TranslationKeys)}
+                                    </h3>
+                                    <p 
+                                        className="text-3xl font-bold text-yellow-400 mb-6"
+                                        style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)' }}
+                                    >
+                                        {offer.price}
+                                    </p>
+                                    <Link 
+                                        to="/offres" 
+                                        className="inline-block bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-brand-pink transition-colors duration-300 shadow-lg"
+                                    >
+                                        {t('read_more')} &rarr;
                                     </Link>
                                 </div>
                             </div>

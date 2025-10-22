@@ -166,31 +166,31 @@ export const OFFERS: Offer[] = [
         title: 'offer_biab_manicure_russe_title',
         description: 'offer_biab_manicure_russe_desc',
         price: '200DH',
-        image: "https://i.postimg.cc/vBJH5QGQ/fawe.png"
+        image: "https://i.postimg.cc/66kVW99c/hshthb.png"
     },
     {
         title: 'offer_mani_pedi_perm_title',
         description: 'offer_mani_pedi_perm_desc',
         price: '250DH',
-        image: "https://i.postimg.cc/B6VPk9sB/hf.png"
+        image: "https://i.postimg.cc/ZnpdBdTG/ʿbgh.png"
     },
     {
         title: 'offer_gel_title',
         description: 'offer_gel_desc',
         price: '250DH',
-        image: "https://i.postimg.cc/GpNsSnbM/utf.png"
+        image: "https://i.postimg.cc/ryx095k5/slq.png"
     },
     {
         title: 'offer_faux_ongles_title',
         description: 'offer_faux_ongles_desc',
         price: '150DH',
-        image: "https://i.postimg.cc/d0Rz5w2f/gff.png"
+        image: "https://i.postimg.cc/FH7hTQSs/qls.png"
     },
     {
         title: 'offer_vernis_perm_title',
         description: 'offer_vernis_perm_desc',
         price: '100DH',
-        image: "https://i.postimg.cc/nhrr8SSf/ega.png"
+        image: "https://i.postimg.cc/25kyTW2S/syl.png"
     }
 ];
 
