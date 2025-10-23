@@ -208,6 +208,7 @@ export const RESULTS_GALLERY: GalleryImage[] = [
     { id: 7, src: 'https://i.postimg.cc/DzbrqPXt/11.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/PJd1nGRj/12.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/kXXWjmSF/13.png', category: 'coiffure' },
+    { id: 7, src: 'https://i.postimg.cc/FzFknyYd/14.png', category: 'coiffure' },
 ];
 
 export const RESULTS_BEFORE_AFTER: ResultImage[] = [

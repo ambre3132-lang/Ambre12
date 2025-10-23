@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { db } from '../firebaseConfig';
-// FIX: Update Firebase imports for v8 compatibility
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Review } from '../types';
 import { UserIcon, ChatBubbleBottomCenterTextIcon, PaperAirplaneIcon } from '../components/icons/Icons';
 import { OFFERS } from '../constants';
@@ -22,9 +20,9 @@ const ReviewsSection: React.FC = () => {
     const [feedback, setFeedback] = useState('');
 
     useEffect(() => {
-        // FIX: Update Firestore query to v8 syntax
-        const q = db.collection('reviews').orderBy('createdAt', 'desc');
-        const unsubscribe = q.onSnapshot((querySnapshot) => {
+        const reviewsCollection = collection(db, 'reviews');
+        const q = query(reviewsCollection, orderBy('createdAt', 'desc'));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const reviewsData: Review[] = [];
             querySnapshot.forEach((doc) => {
                 reviewsData.push({ id: doc.id, ...doc.data() } as Review);
@@ -39,7 +37,6 @@ const ReviewsSection: React.FC = () => {
         return () => unsubscribe();
     }, [t]);
 
-    // FIX: Refactored handleSubmit to use a promise chain to resolve scope-related errors.
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim() || !comment.trim()) {
@@ -49,11 +46,11 @@ const ReviewsSection: React.FC = () => {
         setSubmitting(true);
         setFeedback('');
 
-        // FIX: Update Firestore call to v8 syntax
-        db.collection('reviews').add({
+        const reviewsCollection = collection(db, 'reviews');
+        addDoc(reviewsCollection, {
             name: name,
             comment: comment,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            createdAt: serverTimestamp()
         })
         .then(() => {
             setName('');

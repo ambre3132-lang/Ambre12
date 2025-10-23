@@ -1,3 +1,4 @@
+import { Timestamp } from 'firebase/firestore';
 
 export interface TeamMember {
     name: string;
@@ -46,7 +47,7 @@ export interface Review {
   id?: string;
   name: string;
   comment: string;
-  createdAt: any; // Firestore Timestamp
+  createdAt: Timestamp; // Firestore Timestamp
 }
 
 // FIX: Add BeautyTip interface for the beauty tips section.
