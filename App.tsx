@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -15,7 +14,7 @@ import AboutPage from './pages/AboutPage';
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="bg-brand-beige font-sans text-brand-gray">
         <Header />
         <main>
@@ -32,7 +31,7 @@ const App: React.FC = () => {
         <WhatsAppButton />
         <Footer />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
