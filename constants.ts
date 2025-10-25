@@ -192,6 +192,12 @@ export const OFFERS: Offer[] = [
         price: '100DH',
         image: "https://i.postimg.cc/25kyTW2S/syl.png"
     },
+  {
+        title: 'ffffff',
+        description: 'fffff',
+        price: '1440DH',
+        image: "https://i.postimg.cc/W3k1ghd4/a.png"
+    },
 ];
 
 export const RESULTS_GALLERY: GalleryImage[] = [
@@ -209,8 +215,10 @@ export const RESULTS_GALLERY: GalleryImage[] = [
     { id: 7, src: 'https://i.postimg.cc/PJd1nGRj/12.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/kXXWjmSF/13.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/FzFknyYd/14.png', category: 'coiffure' },
+  { id: 7, src: 'https://i.postimg.cc/W3k1ghd4/a.png', category: 'coiffure' },
 ];
 
 export const RESULTS_BEFORE_AFTER: ResultImage[] = [
     { id: 7, before: 'https://i.postimg.cc/tC48D3fc/image.png', after: 'https://i.postimg.cc/RhXy4h3n/image.png', category: 'coiffure' },
+  { id: 7, before: 'https://i.postimg.cc/W3k1ghd4/a.png', after: 'https://i.postimg.cc/289k3Q54/475139241-122096030006753419-4895602633653687626-n.jpg', category: 'coiffure' },
 ];
