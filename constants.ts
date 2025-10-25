@@ -192,6 +192,12 @@ export const OFFERS: Offer[] = [
         price: '100DH',
         image: "https://i.postimg.cc/25kyTW2S/syl.png"
     }
+  {
+        title: 'aaaa',
+        description: 'aaaa',
+        price: '90DH',
+        image: "https://i.postimg.cc/wvQLLftn/grs.png"
+    }
 ];
 
 export const RESULTS_GALLERY: GalleryImage[] = [
