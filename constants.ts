@@ -191,12 +191,12 @@ export const OFFERS: Offer[] = [
         description: 'offer_vernis_perm_desc',
         price: '100DH',
         image: "https://i.postimg.cc/25kyTW2S/syl.png"
-    }
+    },
   {
-        title: 'aaaa',
-        description: 'aaaa',
-        price: '90DH',
-        image: "https://i.postimg.cc/wvQLLftn/grs.png"
+        title: 'offer_faux_ongles_title',
+        description: 'offer_faux_ongles_desc',
+        price: '150DH',
+        image: "https://i.postimg.cc/FH7hTQSs/qls.png"
     }
 ];
 
@@ -215,8 +215,10 @@ export const RESULTS_GALLERY: GalleryImage[] = [
     { id: 7, src: 'https://i.postimg.cc/PJd1nGRj/12.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/kXXWjmSF/13.png', category: 'coiffure' },
     { id: 7, src: 'https://i.postimg.cc/FzFknyYd/14.png', category: 'coiffure' },
+  { id: 7, src: 'https://i.postimg.cc/FzFknyYd/14.png', category: 'coiffure' },
 ];
 
 export const RESULTS_BEFORE_AFTER: ResultImage[] = [
     { id: 7, before: 'https://i.postimg.cc/tC48D3fc/image.png', after: 'https://i.postimg.cc/RhXy4h3n/image.png', category: 'coiffure' },
+  { id: 7, before: 'https://i.postimg.cc/tC48D3fc/image.png', after: 'https://i.postimg.cc/RhXy4h3n/image.png', category: 'coiffure' },
 ];
